@@ -1,12 +1,13 @@
 import numpy as np
 
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-whitegrid')
+
+plt.style.use("seaborn-whitegrid")
 
 from sklearn.decomposition import PCA
 
 
-def cumuExplVariance(X):
+def cumuExplVariance(X, plot_bool=True):
     """np.cumsum(pca.explained_variance_ratio_)
     Parameters
     ----------
@@ -17,11 +18,11 @@ def cumuExplVariance(X):
     """
 
     pca = PCA().fit(X)
-
-    plt.plot(np.cumsum(pca.explained_variance_ratio_), '*-')
-    plt.xlabel('number of components', fontsize=18)
-    plt.ylabel('cumulative explained variance', fontsize=18);
-    plt.xticks(fontsize=18)
-    plt.yticks(fontsize=18)
-    
-    return;
+    x = np.cumsum(pca.explained_variance_ratio_)
+    if plot_bool:
+        plt.plot(x, "*-")
+        plt.xlabel("number of components", fontsize=18)
+        plt.ylabel("cumulative explained variance", fontsize=18)
+        plt.xticks(fontsize=18)
+        plt.yticks(fontsize=18)
+    return x
