@@ -1,0 +1,9 @@
+# files & folders with string "_noGit"
+*_noGit*
+
+# VIM temporary files
+*~
+*.swp
+*.swo
+.*.sw*
+
