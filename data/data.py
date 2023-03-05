@@ -4,7 +4,7 @@ from urllib.request import urlretrieve
 import pandas as pd
 
 # http://opendata-ajuntament.barcelona.cat/data/es/dataset/bicing
-BICING_URL = "opendata-ajuntament.barcelona.cat/data/dataset/fa94d2f3-3428-47b8-9f2b-f1e4423e745a/resource/33bb617f-dc02-48a5-a2ac-fcf6ab4d54cd/download"
+BICING_URL = "http://opendata-ajuntament.barcelona.cat/data/dataset/fa94d2f3-3428-47b8-9f2b-f1e4423e745a/resource/33bb617f-dc02-48a5-a2ac-fcf6ab4d54cd/download"
 
 
 def get_data(filename = "biciBcn201812.csv", url=BICING_URL,
