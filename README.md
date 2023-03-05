@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  • <a href="https://github.com/juanMarinero/bicingBarcelona/blob/master/main.pdf">pdf</a><br>
+  • <a href="https://raw.githubusercontent.com/juanMarinero/bicingBarcelona/master/main.pdf">pdf</a><br>
   • <a href="https://github.com/juanMarinero/bicingBarcelona/blob/master/main.ipynb">ipynb</a>
 </p>
 
