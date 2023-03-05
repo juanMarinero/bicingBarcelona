@@ -41,6 +41,9 @@ def PCA_LinearRegression(
     """
     X = XdC.values
     y = ydC.values
+    
+    X = np.array(X, dtype=float)
+    X[np.isnan(X)] = 0
 
     pca = PCA(n_components=n_components)
     X_pca = pca.fit_transform(X)
@@ -54,12 +57,13 @@ def PCA_LinearRegression(
         y[:, 0], y_predicted[:, 0]
     )
 
+    df_coef = 0
     if not just_coef_determination:
         plt.figure(figsize=(20, 5))
         plt.plot(index, y, alpha=0.3, label="data")
         plt.plot(index, y_predicted, alpha=0.3, label="regression")
         plt.legend()
-        plt.title(f"R^2 = {100*(r_value**2):.2f} %", fontsize=20)
+        plt.title(f"R^2 = {100*(r_value**2):.2f} %\nn_components = {n_components}", fontsize=16)
 
         if display_table_bool:
             df_coef = pd.DataFrame(
@@ -73,4 +77,4 @@ def PCA_LinearRegression(
                 .format("{:.0e}")
             )
 
-    return 100 * (r_value ** 2)
+    return pca, df_coef, 100 * (r_value ** 2)
